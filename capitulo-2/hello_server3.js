@@ -14,7 +14,13 @@ var server = http.createServer(function(request, response){
 
   response.end();
 });
- 
-server.listen(3000, function(){
+ // devido a possivel ultilização de um codigo anterior na porta 3000
+ // passe a usar um porta diferente eu usei a por 3001
+ // o erro e apresentado como:
+ //  events.js:72
+ //       throw er; // Unhandled 'error' event
+ // rode novamente o codigo como: node code.js ou nodejs code.js
+ //tenha um otimo estudo.
+server.listen(3001, function(){
   console.log('Servidor rodando!');
 });
